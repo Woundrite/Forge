@@ -42,6 +42,10 @@ cargo test
 cargo build
 ```
 
+These same checks run automatically on Ubuntu and Windows for every push to
+`main` and every merge request targeting `main`. The workflow is documented in
+[`docs/ci.md`](docs/ci.md).
+
 Feature branches should include tests for new behavior and error paths. Changes
 to command output, exit codes, configuration, plugin manifests, or shell actions
 must update the related documentation.
