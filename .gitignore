@@ -7,6 +7,7 @@
 
 # Local Forge configuration and data
 .forge/
+scripts/.forge-install.json
 
 # Windows build and editor artifacts
 Thumbs.db

@@ -15,6 +15,7 @@ Displays the engine, command API, and shell protocol versions.
 - `show`: display the current configuration.
 - `path`: display the user configuration file path.
 - `add-plugin-dir <path>`: register a plugin discovery directory.
+- `remove-plugin-dir <path>`: unregister a plugin discovery directory.
 
 ### `forge plugin list`
 

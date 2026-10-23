@@ -182,6 +182,20 @@ impl Engine {
                 println!("Plugin directory configured.");
                 Ok(0)
             }
+            Some("remove-plugin-dir") => {
+                let path = args.get(1).ok_or_else(|| {
+                    ForgeError::Usage("config remove-plugin-dir requires a path".into())
+                })?;
+                let path = PathBuf::from(path);
+                let mut config = self.config.clone();
+                let previous_len = config.plugin_dirs.len();
+                config.plugin_dirs.retain(|configured| configured != &path);
+                if config.plugin_dirs.len() != previous_len {
+                    config::save(&config)?;
+                }
+                println!("Plugin directory removed.");
+                Ok(0)
+            }
             Some(value) => Err(ForgeError::Usage(format!(
                 "unknown config operation '{value}'"
             ))),
