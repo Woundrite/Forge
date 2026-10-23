@@ -34,6 +34,19 @@ cargo build
 cargo test
 ```
 
+Common project tasks are also available through the native Windows task
+runner:
+
+```powershell
+.\scripts\project.ps1 setup
+.\scripts\project.ps1 ci
+.\scripts\project.ps1 clean
+.\scripts\project.ps1 run -- version
+```
+
+On systems with `make`, the equivalent targets are available through
+`Makefile`, for example `make ci` or `make run ARGS="version"`.
+
 Run the CLI from the repository with Cargo:
 
 ```powershell
@@ -64,6 +77,7 @@ Forge/
 
 - [Quick start](docs/quickstart.md)
 - [Installation and removal](docs/installation.md)
+- [Development tasks](docs/development-tasks.md)
 - [Plugin catalog](docs/plugins.md)
 - [Architecture](docs/architecture.md)
 - [Command reference](docs/commands.md)
