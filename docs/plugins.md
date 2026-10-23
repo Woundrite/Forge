@@ -38,6 +38,28 @@ forge dice 4d6kh3
 Parses common dice notation, prints each roll and the sum, and exits with
 `0` on success or `2` for invalid notation.
 
+### `tmpx`
+
+Usage:
+
+```powershell
+forge tmpx
+forge tmpx --ttl 2h
+```
+
+Creates a fresh temporary directory under the system temp path and prints its
+location.
+
+### `sysinfo`
+
+Usage:
+
+```powershell
+forge sysinfo
+```
+
+Displays a concise operating-system summary including version, CPU, and memory.
+
 ## Next plugins to implement
 
 The next logical candidates from the specification are the shell-state helpers:

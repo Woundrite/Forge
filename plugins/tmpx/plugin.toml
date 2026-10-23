@@ -1,0 +1,9 @@
+[plugin]
+name = "tmpx"
+version = "1.0.0"
+description = "Create a temporary workspace folder"
+api_version = 1
+
+[commands.tmpx]
+executable = "bin/tmpx.ps1"
+description = "Create and print a temporary directory"

@@ -8,6 +8,8 @@ contract without requiring a core rebuild.
 - `hello`: prints a greeting.
 - `pick`: picks one option from a list.
 - `dice`: rolls common dice notation such as `2d20` or `4d6kh3`.
+- `tmpx`: creates a temporary directory and reports the path.
+- `sysinfo`: displays the operating system and hardware summary.
 
 ## Layout
 
