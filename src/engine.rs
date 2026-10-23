@@ -234,7 +234,7 @@ impl Engine {
         if options.newshell {
             return run_in_new_shell(&plugin.executable, args);
         }
-        let mut process = Command::new(&plugin.executable);
+        let mut process = build_script_command(&plugin.executable)?;
         process.args(args);
         if options.capture {
             let output = process.output()?;
@@ -280,15 +280,35 @@ fn is_reserved(name: &str) -> bool {
     matches!(name, "config" | "help" | "plugin" | "version")
 }
 
+fn build_script_command(executable: &PathBuf) -> Result<Command, ForgeError> {
+    let Some(extension) = executable.extension().and_then(|ext| ext.to_str()) else {
+        return Ok(Command::new(executable));
+    };
+
+    match extension.to_ascii_lowercase().as_str() {
+        "cmd" | "bat" => {
+            let mut command = Command::new("cmd");
+            command.arg("/c").arg(executable);
+            Ok(command)
+        }
+        "ps1" => {
+            let mut command = Command::new("powershell");
+            command
+                .arg("-NoProfile")
+                .arg("-ExecutionPolicy")
+                .arg("Bypass")
+                .arg("-File")
+                .arg(executable);
+            Ok(command)
+        }
+        _ => Ok(Command::new(executable)),
+    }
+}
+
 fn run_in_new_shell(executable: &PathBuf, args: &[String]) -> Result<i32, ForgeError> {
-    #[cfg(windows)]
-    let status = Command::new("cmd")
-        .arg("/c")
-        .arg(executable)
-        .args(args)
-        .status()?;
-    #[cfg(not(windows))]
-    let status = Command::new(executable).args(args).status()?;
+    let mut command = build_script_command(executable)?;
+    command.args(args);
+    let status = command.status()?;
     Ok(status.code().unwrap_or(1))
 }
 
