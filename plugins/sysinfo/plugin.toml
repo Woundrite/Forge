@@ -1,0 +1,9 @@
+[plugin]
+name = "sysinfo"
+version = "1.0.0"
+description = "Display selected OS and hardware information"
+api_version = 1
+
+[commands.sysinfo]
+executable = "bin/sysinfo.ps1"
+description = "Print a concise system summary"

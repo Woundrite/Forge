@@ -1,0 +1,9 @@
+[plugin]
+name = "pick"
+version = "1.0.0"
+description = "Choose one option from many"
+api_version = 1
+
+[commands.pick]
+executable = "bin/pick.ps1"
+description = "Randomly pick one option"

@@ -1,0 +1,9 @@
+[plugin]
+name = "hello"
+version = "1.0.0"
+description = "Sample greeting plugin"
+api_version = 1
+
+[commands.hello]
+executable = "bin/hello.ps1"
+description = "Print a greeting"

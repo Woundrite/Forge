@@ -1,0 +1,9 @@
+[plugin]
+name = "dice"
+version = "1.0.0"
+description = "Dice rolling and selection helper"
+api_version = 1
+
+[commands.dice]
+executable = "bin/dice.ps1"
+description = "Roll one or more dice"
