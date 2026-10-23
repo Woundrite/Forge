@@ -63,6 +63,7 @@ Forge/
 ## Documentation
 
 - [Quick start](docs/quickstart.md)
+- [Plugin catalog](docs/plugins.md)
 - [Architecture](docs/architecture.md)
 - [Command reference](docs/commands.md)
 - [Plugin development](docs/plugin-development.md)
