@@ -68,6 +68,7 @@ Forge/
 - [Plugin development](docs/plugin-development.md)
 - [Shell integration](docs/shell-integration.md)
 - [Security model](docs/security.md)
+- [Continuous integration](docs/ci.md)
 - [Contributing](CONTRIBUTING.md)
 - [Product specification](docs/specification.md)
 
