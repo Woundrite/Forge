@@ -1,0 +1,13 @@
+/target/
+.idea/
+.vscode/
+*.swp
+*.swo
+*.log
+
+# Local Forge configuration and data
+.forge/
+
+# Windows build and editor artifacts
+Thumbs.db
+Desktop.ini
